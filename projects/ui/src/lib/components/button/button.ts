@@ -1,8 +1,9 @@
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ui-button',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './button.html',
   styleUrl: './button.css',
 })

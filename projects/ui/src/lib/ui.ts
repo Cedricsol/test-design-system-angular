@@ -1,10 +1,9 @@
-import { Component, NgModule } from '@angular/core';
-import { Button } from './components/button/button';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
-@NgModule({
-  declarations: [Button],
-  imports: [CommonModule],
-  exports: [Button],
+@Component({
+  selector: 'lib-ui',
+  imports: [],
+  template: ` <p>ui works!</p> `,
+  styles: ``,
 })
 export class Ui {}
