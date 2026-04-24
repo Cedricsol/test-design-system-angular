@@ -1,3 +1,13 @@
-<button [ngClass]="classes">
+<button
+  class="rounded-md font-semibold transition"
+  [ngClass]="{
+    'bg-primary text-white hover:bg-primary/80': variant === 'primary',
+    'bg-gray-200 text-gray-900 hover:bg-gray-300': variant === 'secondary',
+
+    'px-2 py-1 text-sm': size === 'sm',
+    'px-4 py-2 text-md': size === 'md',
+    'px-6 py-3 text-lg': size === 'lg',
+  }"
+>
   <ng-content></ng-content>
 </button>
