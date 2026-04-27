@@ -1,8 +1,9 @@
 <button
   class="rounded-md font-semibold transition"
   [ngClass]="{
-    'bg-primary text-white hover:bg-primary/80': variant === 'primary',
-    'bg-gray-200 text-gray-900 hover:bg-gray-300': variant === 'secondary',
+    'bg-content-primary text-text-primary hover:bg-content-primary/80': variant === 'primary',
+    'bg-content-secondary text-text-secondary hover:bg-content-secondary/80':
+      variant === 'secondary',
 
     'px-2 py-1 text-sm': size === 'sm',
     'px-4 py-2 text-md': size === 'md',

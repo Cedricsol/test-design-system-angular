@@ -1,19 +1,19 @@
 <div class="overflow-x-auto">
-  <table class="min-w-full border border-gray-200 rounded-md">
-    <thead class="bg-primary">
+  <table class="min-w-full border border-border rounded-md">
+    <thead class="bg-content-primary">
       <tr>
         @for (col of columns; track col.key) {
-          <th class="text-left px-4 py-2 text-sm font-semibold text-gray-100">
+          <th class="text-left px-4 py-2 text-sm font-semibold text-text-primary">
             {{ col.label }}
           </th>
         }
       </tr>
     </thead>
-    <tbody class="bg-secondary">
+    <tbody class="bg-content-secondary">
       @for (row of data; track row) {
-        <tr class="border-t hover:bg-gray-400 transition">
+        <tr class="border-t hover:bg-hover-secondary transition">
           @for (col of columns; track col.key) {
-            <td class="px-4 py-2 text-sm text-gray-200">
+            <td class="px-4 py-2 text-sm text-text-secondary">
               {{ row[col.key] }}
             </td>
           }
