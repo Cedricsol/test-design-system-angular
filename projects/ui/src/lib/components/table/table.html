@@ -1,6 +1,11 @@
 <div
   [ngClass]="{
-    'overflow-auto max-h-96': variant === 'scrollable',
+    'overflow-auto': variant === 'scrollable',
+
+    'max-h-tableSm': size === 'sm',
+    'max-h-tableMd': size === 'md',
+    'max-h-tableLg': size === 'lg',
+    'max-h-tableXl': size === 'xl',
   }"
 >
   <table class="min-w-full border border-border rounded-md">

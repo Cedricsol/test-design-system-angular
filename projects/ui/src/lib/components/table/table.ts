@@ -11,4 +11,5 @@ export class Table<T = any> {
   @Input() columns: { key: keyof T; label: string }[] = [];
   @Input() data: T[] = [];
   @Input() variant: 'default' | 'scrollable' = 'default';
+  @Input() size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
 }

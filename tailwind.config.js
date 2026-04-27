@@ -21,6 +21,12 @@ export default {
           secondary: colors.gray[400],
         },
       },
+      maxHeight: {
+        tableSm: '25vh',
+        tableMd: '50vh',
+        tableLg: '75vh',
+        tableXl: '100vh',
+      },
     },
   },
   plugins: [],
