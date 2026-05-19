@@ -37,10 +37,6 @@ export class Table<T = any> implements AfterViewInit {
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
-    requestAnimationFrame(() => {
-      this.calculateScrollbarWidth();
-    });
-
     this.resizeObserver = new ResizeObserver(() => {
       this.calculateScrollbarWidth();
     });
@@ -50,11 +46,6 @@ export class Table<T = any> implements AfterViewInit {
 
   ngOnDestroy(): void {
     this.resizeObserver.disconnect();
-  }
-
-  @HostListener('window:resize')
-  onResize(): void {
-    this.calculateScrollbarWidth();
   }
 
   private calculateScrollbarWidth(): void {
