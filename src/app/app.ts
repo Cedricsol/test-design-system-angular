@@ -8,10 +8,10 @@ type ColumnKey = {
   creator: string;
 };
 
-const columns: { key: keyof ColumnKey; label: string }[] = [
-  { key: 'name', label: 'Nom' },
-  { key: 'date', label: 'Date de première version' },
-  { key: 'creator', label: 'Créateur' },
+const columns: { key: keyof ColumnKey; label: string; width: string }[] = [
+  { key: 'name', label: 'Nom', width: '30%' },
+  { key: 'date', label: 'Date de première version', width: '20%' },
+  { key: 'creator', label: 'Créateur', width: '50%' },
 ];
 
 const languages = [

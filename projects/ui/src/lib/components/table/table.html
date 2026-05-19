@@ -1,33 +1,49 @@
-<div
-  [ngClass]="{
-    'overflow-auto': variant === 'scrollable',
-
-    'max-h-tableSm': size === 'sm',
-    'max-h-tableMd': size === 'md',
-    'max-h-tableLg': size === 'lg',
-    'max-h-tableXl': size === 'xl',
-  }"
->
-  <table class="min-w-full border border-border rounded-md">
-    <thead class="bg-content-primary sticky top-0 z-10">
-      <tr>
-        @for (col of columns; track col.key) {
-          <th class="text-left px-4 py-2 text-sm font-semibold text-text-primary">
-            {{ col.label }}
-          </th>
-        }
-      </tr>
-    </thead>
-    <tbody class="bg-content-secondary">
-      @for (row of data; track row) {
-        <tr class="border-t hover:bg-hover-secondary transition">
+<div class="border border-border rounded-md overflow-hidden">
+  <!-- HEADER -->
+  <div class="bg-content-primary table-header" [style.padding-right.px]="scrollbarWidth">
+    <table class="w-full table-fixed border-collapse">
+      <thead>
+        <tr>
           @for (col of columns; track col.key) {
-            <td class="px-4 py-2 text-sm text-text-secondary">
-              {{ row[col.key] }}
-            </td>
+            <th
+              [style.width]="col.width"
+              class="border-b border-r border-border last:border-r-0 px-4 py-2 text-center align-middle text-sm font-semibold text-text-primary"
+            >
+              {{ col.label }}
+            </th>
           }
         </tr>
-      }
-    </tbody>
-  </table>
+      </thead>
+    </table>
+  </div>
+  <!-- BODY -->
+  <div
+    #scrollBody
+    [ngClass]="{
+      'overflow-y-scroll overflow-x-hidden': variant === 'scrollable',
+
+      'max-h-tableSm': size === 'sm',
+      'max-h-tableMd': size === 'md',
+      'max-h-tableLg': size === 'lg',
+      'max-h-tableXl': size === 'xl',
+    }"
+    class="bg-content-secondary scrollbar-stable"
+  >
+    <table class="w-full table-fixed border-collapse">
+      <tbody>
+        @for (row of data; track row) {
+          <tr class="border-t hover:bg-hover-secondary/60 transition">
+            @for (col of columns; track col.key) {
+              <td
+                [style.width]="col.width"
+                class="border-b border-r border-border last:border-r-0 px-4 py-2 text-center align-middle text-sm text-text-secondary"
+              >
+                {{ row[col.key] }}
+              </td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>
