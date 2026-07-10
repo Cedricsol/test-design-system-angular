@@ -3,4 +3,36 @@
 <button hlmBtn variant="secondary">Button</button>
 <button hlmBtn variant="destructive">Button</button>
 
+<div hlmTableContainer class="h-200">
+  <table hlmTable class="table-fixed">
+    <caption hlmTableCaption>
+      A list of your recent invoices
+    </caption>
+    <thead hlmTableHeader>
+      <tr hlmTableRow>
+        <th hlmTableHead class="w-25">Invoice</th>
+        <th hlmTableHead>Status</th>
+        <th hlmTableHead>Method</th>
+        <th hlmTableHead class="text-right">Amount</th>
+      </tr>
+    </thead>
+    <tbody hlmTableBody>
+      @for (invoice of _invoices; track invoice.invoice) {
+        <tr hlmTableRow>
+          <td hlmTableCell class="font-medium">{{ invoice.invoice }}</td>
+          <td hlmTableCell>{{ invoice.paymentStatus }}</td>
+          <td hlmTableCell>{{ invoice.paymentMethod }}</td>
+          <td hlmTableCell class="text-right">{{ invoice.totalAmount }}</td>
+        </tr>
+      }
+    </tbody>
+    <tfoot hlmTableFooter>
+      <tr hlmTableRow class="w-full">
+        <td hlmTableCell [attr.colSpan]>Total</td>
+        <td hlmTableCell class="text-right">$2,500.00</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
 <router-outlet />
